@@ -1,0 +1,37 @@
+﻿@page
+@model E_Employment.Pages.Employment.IndexModel
+@{
+}
+
+<br/>
+<h2>List of Employement</h2>
+<a class="btn btn-primary btn-sm" href='/Clients/Create'>New Client</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Given Names</th>
+            <th>Last Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.listEmployment){
+            <tr>
+                <td>@item.ENTITY_GIVEN_NAMES </td>
+                <td>@item.ENTITY_LAST_NAME</td>
+                <td>@item.ENTITY_TELEPHONE</td>
+                <td>@item.ENTITY_EMAIL</td>
+                <td>@item.ENTITY_DOB</td>
+                <td>
+                    <a class="btn btn-warning btn-sm" href='/Clients/Edit?id=@item.ENTITY_ID'>Edt</a>
+                    <a class="btn btn-danger btn-sm" href='/Clients/Delete?id=@item.ENTITY_ID'>Delete</a>
+
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
